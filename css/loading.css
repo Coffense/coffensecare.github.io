@@ -1,0 +1,62 @@
+/* Loading Animation */
+.loading-maskot {
+    position: relative;
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes flying {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+/* Fade in and up animation for the maskot */
+#maskot {
+    animation: fadeInUp 1.5s ease forwards, flying 1.5s ease-in-out infinite;
+}
+
+/* Overlay animation */
+.overlay {
+    background-color: rgba(0, 0, 0, 0.8); /* Warna overlay */
+    transition: transform 600ms ease;
+    transform: translateY(0); /* Posisi awal overlay */
+}
+
+/* Overlay geser ke atas */
+.overlay.slide-up {
+    transform: translateY(100%); /* Geser overlay ke atas */
+}
+
+/* Main content hidden during loading */
+#main-content {
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+#loading-page{
+    transition: transform 1s ease;
+    transform: translate(0); /* Posisi awal overlay */
+
+}
+#loading-page.slide-up{
+    transform: translateY(-100%);
+}
+body.noscroll {
+    overflow: hidden;
+}
